@@ -1,3 +1,4 @@
+const mongoose = require("mongoose");
 const User = require("../models/User");
 
 const bcrypt = require("bcryptjs");
@@ -78,8 +79,50 @@ const getCurrentUser = (req, res) => {
 	res.status(200).json(user);
 };
 
+//update an user
+const update = async (req, res) => {
+	const { name, password, bio } = req.body;
+
+	let profileImage = null;
+
+	if (req.file) {
+		profileImage = req.file.filename;
+	}
+
+	const reqUser = req.user;
+
+	const user = await User.findById(
+		new mongoose.Types.ObjectId(reqUser._id),
+	).select("-password");
+
+	if (user) {
+		user.name = name;
+	}
+
+	if (password) {
+		// Generate password hash
+		const salt = await bcrypt.genSalt();
+		const passwordHash = await bcrypt.hash(password, salt);
+
+		user.password = passwordHash;
+	}
+
+	if (profileImage) {
+		user.profileImage = profileImage;
+	}
+
+	if (bio) {
+		user.bio = bio;
+	}
+
+	await user.save();
+
+	res.status(200).json(user);
+};
+
 module.exports = {
 	register,
 	login,
 	getCurrentUser,
+	update,
 };
