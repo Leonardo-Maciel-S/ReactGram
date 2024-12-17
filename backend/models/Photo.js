@@ -9,7 +9,6 @@ const photoSchema = new Schema(
 		comments: Array,
 		userID: mongoose.ObjectId,
 		userName: String,
-		s,
 	},
 	{ timestamps: true },
 );
