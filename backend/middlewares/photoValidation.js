@@ -30,4 +30,12 @@ const photoUpdateValidation = () => {
 	];
 };
 
-module.exports = { photoInsertValidation, photoUpdateValidation };
+const commentValidation = () => {
+	return [body("comment").isString().withMessage("Comentário é obrigatório")];
+};
+
+module.exports = {
+	photoInsertValidation,
+	photoUpdateValidation,
+	commentValidation,
+};
