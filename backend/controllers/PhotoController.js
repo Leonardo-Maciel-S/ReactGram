@@ -41,6 +41,8 @@ const deletePhoto = async (req, res) => {
 	try {
 		const photo = await Photo.findById(new mongoose.Types.ObjectId(id));
 
+		console.log(photo);
+
 		// Check photo exists
 		if (!photo) {
 			res.status(404).json({ errors: ["Photo não encontrada."] });
@@ -66,7 +68,29 @@ const deletePhoto = async (req, res) => {
 	}
 };
 
+// Get all photos
+const getAllPhotos = async (req, res) => {
+	const photos = await Photo.find({})
+		.sort([["createdAt", -1]])
+		.exec();
+
+	return res.status(200).json(photos);
+};
+
+// Get user photos
+const getUserPhotos = async (req, res) => {
+	const { id } = req.params;
+
+	const photo = await Photo.find({ userId: id })
+		.sort([["createdAt", -1]])
+		.exec();
+
+	return res.status(200).json(photo);
+};
+
 module.exports = {
 	insertPhoto,
 	deletePhoto,
+	getAllPhotos,
+	getUserPhotos,
 };
