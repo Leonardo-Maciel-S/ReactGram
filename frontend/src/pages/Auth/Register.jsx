@@ -17,7 +17,7 @@ const Register = () => {
 	const handleSubmitForm = (data) => {};
 
 	return (
-		<div>
+		<div id="register">
 			<h2>ReactGram</h2>
 			<p className="subtitle">Cadastre-se para ver as fotos dos seus amigos.</p>
 
@@ -30,7 +30,7 @@ const Register = () => {
 			</form>
 
 			<p>
-				Já tem conta? <Link to="/login">Click aqui</Link>
+				Já tem conta? <Link to="/login">Clique aqui</Link>
 			</p>
 		</div>
 	);

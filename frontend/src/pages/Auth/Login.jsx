@@ -1,7 +1,7 @@
 import "./Auth.css";
 
 const Login = () => {
-	return <div>login</div>;
+	return <div id="login">login</div>;
 };
 
 export default Login;
