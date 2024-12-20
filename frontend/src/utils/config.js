@@ -1,7 +1,7 @@
 export const api = "http://localhost:5000/api";
 export const uploads = "http://localhost:5000/api/uploads";
 
-const requestConfig = (method, data, token = null, image = null) => {
+export const requestConfig = (method, data, token = null, image = null) => {
 	let config;
 
 	if (image) {
