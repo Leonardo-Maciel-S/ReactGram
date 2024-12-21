@@ -5,8 +5,8 @@ const register = async (data) => {
 	const config = requestConfig("POST", data);
 
 	try {
-		const res = await fetch(`${api}/users/register`, config);
-		const data = res.json();
+		const res = await fetch(`${api}/user/register`, config);
+		const data = await res.json();
 
 		if (data) {
 			localStorage.setItem("user", JSON.stringify(data));
