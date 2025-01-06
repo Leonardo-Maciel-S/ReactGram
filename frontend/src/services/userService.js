@@ -32,13 +32,9 @@ const updateProfile = async (data, token) => {
 const getUserDetails = async (id) => {
 	const config = requestConfig("GET");
 
-	console.log(id);
-
 	try {
 		const response = await fetch(`${api}/users/${id}`, config);
 		const data = await response.json();
-
-		console.log(data);
 
 		return data;
 	} catch (error) {
