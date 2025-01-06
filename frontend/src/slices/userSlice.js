@@ -84,11 +84,11 @@ export const userSlice = createSlice({
 				state.error = action.payload;
 				state.user = {};
 			})
-			.addCase(profile.pending, (state) => {
+			.addCase(getUserDetails.pending, (state) => {
 				state.loading = true;
 				state.error = false;
 			})
-			.addCase(profile.fulfilled, (state, action) => {
+			.addCase(getUserDetails.fulfilled, (state, action) => {
 				state.loading = false;
 				state.success = true;
 				state.error = null;
