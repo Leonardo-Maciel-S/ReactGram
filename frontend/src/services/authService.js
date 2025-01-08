@@ -5,7 +5,7 @@ const register = async (data) => {
 	const config = requestConfig("POST", data);
 
 	try {
-		const response = await fetch(`${api}/user/register`, config);
+		const response = await fetch(`${api}/users/register`, config);
 		const data = await response.json();
 
 		if (data._id) {
@@ -28,7 +28,7 @@ const login = async (data) => {
 	const config = requestConfig("POST", data);
 
 	try {
-		const response = await fetch(`${api}/user/login`, config);
+		const response = await fetch(`${api}/users/login`, config);
 		const data = await response.json();
 
 		if (data._id) {
