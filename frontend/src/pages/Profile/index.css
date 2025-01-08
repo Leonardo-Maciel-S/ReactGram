@@ -67,6 +67,7 @@
 }
 
 .edit-photo img {
-	width: 100%;
+	margin: 0 auto;
+	width: 50%;
 	margin-bottom: 1em;
 }

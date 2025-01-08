@@ -40,10 +40,25 @@ const deletePhoto = async (id, token) => {
 	}
 };
 
+// Update a photo
+const updatePhoto = async (data, id, token) => {
+	const config = requestConfig("PUT", data, token);
+	console.log(token);
+
+	try {
+		const response = await fetch(`${api}/photos/${id}`, config);
+		const data = await response.json();
+		return data;
+	} catch (error) {
+		console.log(error);
+	}
+};
+
 const photoService = {
 	publishPhoto,
 	getUserPhotos,
 	deletePhoto,
+	updatePhoto,
 };
 
 export default photoService;
