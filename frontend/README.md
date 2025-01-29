@@ -1,8 +1,18 @@
-# React + Vite
+# ReactGram
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Projetinho FullStack em React + Node com Express para aplicar conhecimentos mais aprofundados como:
+## Front End
+- Redux com toolkit
+- Consumo de api
+- React router
+- Controle de acesso com autenticação
+- Hooks
+## Back end
+- Criação de api
+- Express
+- Rotas
+- jwtSecret
+- Autenticação
+- Middlewares
+- Controllers
+- Models (MongoDB com mongoose) 
