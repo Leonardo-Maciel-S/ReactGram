@@ -17,6 +17,7 @@ import Footer from "./components/Footer";
 import EditProfile from "./pages/EditProfile";
 import Profile from "./pages/Profile";
 import Photo from "./pages/Photo/Photo";
+import Search from "./pages/Search";
 
 function App() {
 	const { auth, loading } = useAuth();
@@ -52,6 +53,11 @@ function App() {
 						<Route
 							path="/register"
 							element={!auth ? <Register /> : <Navigate to="/" />}
+						/>
+
+						<Route
+							path="/search"
+							element={auth ? <Search /> : <Navigate to="/login" />}
 						/>
 
 						<Route
