@@ -113,7 +113,7 @@ const searchPhotos = async (query, token) => {
 	const config = requestConfig("GET", null, token);
 
 	try {
-		const response = await fetch(`${api}/photos/search?q=${query}`);
+		const response = await fetch(`${api}/photos/search?q=${query}`, config);
 		const data = await response.json();
 		return data;
 	} catch (error) {
